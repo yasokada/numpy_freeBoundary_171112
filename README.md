@@ -1,7 +1,7 @@
 # numpy_freeBoundary_171112 (Nov. 18, 2017)
 
 The code finds triangles not hidden by other triangles (defined herein as '**free triangles**'). 
-The code reads triangle incides (incides of vertices) of tetrahedra, then outputs incides of free triangles.
+The code reads triangle indices (indices of vertices) of tetrahedra, then outputs indices of free triangles.
 
 The code uses:
 
