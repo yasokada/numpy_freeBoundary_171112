@@ -1,7 +1,8 @@
 import numpy as np
 
 '''
-v0.4 Nov. 18, 2017 
+v0.4 Nov. 18, 2017 find_freeBoundary()
+  - Test_get_shown_triangles() uses find_freeBoundary()
   - Test_get_shown_triangles_3tetrahedra() uses find_freeBoundary()
   - Test_get_shown_triangles_fromfile() uses find_freeBoundary()
   - add find_freeBoundary() 
@@ -81,11 +82,7 @@ def Test_get_shown_triangles():
     tri2 = [1092, 1095, 896, 856]  # index of triangles for tetrahedra
     tris = [np.array(tri1), np.array(tri2)]
 
-    trihdn = find_hidden_triangleIndex(tris)
-    print('hidden:', trihdn)
-    triall = get_triangle_sets(tris)
-    #
-    trishown = get_shown_triangles(trihdn, triall)
+    trishown = find_freeBoundary(tris)
     print('---except for hidden---')
     for elem in trishown:
         print(elem)
@@ -109,6 +106,6 @@ def Test_get_shown_triangles_fromfile():
         print(elem)
 
 if __name__ == '__main__':
-    # Test_get_shown_triangles()
-    Test_get_shown_triangles_3tetrahedra()
+    Test_get_shown_triangles()
+    # Test_get_shown_triangles_3tetrahedra()
     # Test_get_shown_triangles_fromfile()
