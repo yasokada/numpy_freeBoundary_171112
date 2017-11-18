@@ -79,6 +79,7 @@ def get_shown_triangles(trihdns, triall):
 
 
 def Test_get_shown_triangles():
+    # test for 2 tetrahedra having 2 hidden triangles
     tri1 = [1092, 856, 1094, 1095]  # index of triangles for tetrahedra
     tri2 = [1092, 1095, 896, 856]  # index of triangles for tetrahedra
     tris = [np.array(tri1), np.array(tri2)]
@@ -90,6 +91,7 @@ def Test_get_shown_triangles():
 
 
 def Test_get_shown_triangles_3tetrahedra():
+    # test for 3 tetrahedra having 4 hidden triangles
     tri1 = [1098, 1175, 1170, 1204]  # index of triangles for tetrahedra
     tri2 = [1098, 1170, 1175, 1172]  # index of triangles for tetrahedra
     tri3 = [1098, 1170, 1203, 1204]  # index of triangles for tetrahedra
@@ -101,6 +103,7 @@ def Test_get_shown_triangles_3tetrahedra():
 
 
 def Test_get_shown_triangles_fromfile():
+    # test for tetrahedra defined in a file
     tris = np.genfromtxt('tri_bef_171118.txt', delimiter='   ')
     trishown = find_freeBoundary(tris)
     for elem in trishown:
