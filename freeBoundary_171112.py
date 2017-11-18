@@ -1,6 +1,8 @@
 import numpy as np
 
 '''
+v0.4 Nov. 18, 2017 
+  - add find_freeBoundary() 
 v0.3 Nov. 18, 2017 test reading from file
   - add Test_get_shown_triangles_fromfile()
 v0.2 Nov. 12, 2017 test with 3 tetrahedra
@@ -15,6 +17,12 @@ v0.1 Nov. 12, 2017
 
 # on Python 3.5.2
 # coding rule:PEP8
+
+def find_freeBoundary(tris):
+    trihdn = find_hidden_triangleIndex(tris)
+    triall = get_triangle_sets(tris)
+    trishown = get_shown_triangles(trihdn, triall)
+    return trishown
 
 
 def find_hidden_triangleIndex(tris):
