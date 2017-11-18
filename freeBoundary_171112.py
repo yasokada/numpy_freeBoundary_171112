@@ -2,6 +2,7 @@ import numpy as np
 
 '''
 v0.4 Nov. 18, 2017 
+  - Test_get_shown_triangles_fromfile() uses find_freeBoundary()
   - add find_freeBoundary() 
 v0.3 Nov. 18, 2017 test reading from file
   - add Test_get_shown_triangles_fromfile()
@@ -107,13 +108,7 @@ def Test_get_shown_triangles_3tetrahedra():
 
 def Test_get_shown_triangles_fromfile():
     tris = np.genfromtxt('tri_bef_171118.txt', delimiter='   ')
-
-    trihdn = find_hidden_triangleIndex(tris)
-    print('hidden:', trihdn)
-    triall = get_triangle_sets(tris)
-    #
-    trishown = get_shown_triangles(trihdn, triall)
-    print('---except for hidden---')
+    trishown = find_freeBoundary(tris)
     for elem in trishown:
         print(elem)
 
